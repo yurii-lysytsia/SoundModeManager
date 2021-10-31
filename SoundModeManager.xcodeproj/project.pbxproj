@@ -10,7 +10,6 @@
 		5BD709C6272E8316006244C6 /* SoundModeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD709BD272E8316006244C6 /* SoundModeManager.framework */; };
 		5BD709CB272E8316006244C6 /* SoundModeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD709CA272E8316006244C6 /* SoundModeManagerTests.swift */; };
 		5BD709CC272E8316006244C6 /* SoundModeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD709C0272E8316006244C6 /* SoundModeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BD709D8272E83AD006244C6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5BD709D7272E83AD006244C6 /* README.md */; };
 		5BD709DD272E870C006244C6 /* SoundModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD709DC272E870C006244C6 /* SoundModeManager.swift */; };
 		5BD709DF272E8774006244C6 /* SoundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD709DE272E8774006244C6 /* SoundMode.swift */; };
 		5BD709E5272E8A01006244C6 /* silent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5BD709E4272E8A01006244C6 /* silent.aiff */; };
@@ -35,6 +34,7 @@
 		5BD709DC272E870C006244C6 /* SoundModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModeManager.swift; sourceTree = "<group>"; };
 		5BD709DE272E8774006244C6 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
 		5BD709E4272E8A01006244C6 /* silent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = silent.aiff; sourceTree = "<group>"; };
+		5BD709E7272EA38B006244C6 /* SoundModeManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SoundModeManager.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD709D7272E83AD006244C6 /* README.md */,
+				5BD709E7272EA38B006244C6 /* SoundModeManager.podspec */,
 				5BD709BF272E8316006244C6 /* SoundModeManager */,
 				5BD709C9272E8316006244C6 /* SoundModeManagerTests */,
 				5BD709BE272E8316006244C6 /* Products */,
@@ -238,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD709E5272E8A01006244C6 /* silent.aiff in Resources */,
-				5BD709D8272E83AD006244C6 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

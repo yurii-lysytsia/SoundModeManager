@@ -82,7 +82,7 @@ manager.endUpdatingCurrentMode()
 ```swift
 // Invalidate observation token is working the same as `NSKeyValueObservation`;
 // So you are able to invalidate it manually if you need;
-// Token will be invalidated automatically when it is deinited  
+// Token will be invalidated automatically when it is deinited.  
 observationToken.invalidate()
 ``` 
 
