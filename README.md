@@ -6,7 +6,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/SoundModeManager?color=red)]()
 [![Build](https://img.shields.io/github/workflow/status/yurii-lysytsia/SoundModeManager/Prepare%20pull%20request%20to%20merge)]()
 
-[![Preview]()](Preview.mp4)
+[![Preview](Preview.gif)]()
 
 - [Installation](#-installation)
     - [CocoaPods](#cocoapods)
