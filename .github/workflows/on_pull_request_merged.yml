@@ -1,7 +1,7 @@
 name: Pull request has already merged
 
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
     types:
@@ -18,7 +18,7 @@ jobs:
     - name: Checkout pull request branch
       uses: actions/checkout@v2
       with:
-        ref: ${{ github.event.pull_request.head.ref }}
+        ref: ${{ github.event.pull_request.base.ref }}
 
     - name: Setup ruby and bundler
       uses: ruby/setup-ruby@v1
