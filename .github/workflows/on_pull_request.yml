@@ -7,6 +7,7 @@ on:
 
 jobs:
   update_version:
+    name: Update project version
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

@@ -52,7 +52,7 @@ public class SoundModeManager: NSObject {
     
     // MARK: - Properties [Dependencies]
     
-    /// Sound to check sound mode state.
+    /// Sound to check sound mode mode.
     private let soundId: SystemSoundID
     
     /// Sound ID for mute sound.
@@ -69,7 +69,7 @@ public class SoundModeManager: NSObject {
     
     // MARK: - Inits
     
-    /// Create a new instance with given sound URL and other parameters.  and the length greater than 0.5 sec.
+    /// Create a new instance with given sound URL and other parameters.
     /// - Parameters:
     ///   - soundUrl: URL to the local muted sound file. Sound should be muted.
     ///   - soundUpdatingInterval: Frequency of checking the status in seconds. Should be greater than `1`. Default is `1`.
@@ -141,6 +141,23 @@ public class SoundModeManager: NSObject {
         }
     }
     
+    /// Create a new instance with given parameters. Default silent sound URL will be used.
+    ///
+    /// - Parameters:
+    ///   - soundUpdatingInterval: Frequency of checking the status in seconds. Should be greater than `1`. Default is `1`.
+    ///   - notificationCenter: Notification center dependency to use for observation. Default is `.default`.
+    public convenience init(soundUpdatingInterval: TimeInterval = 1, notificationCenter: NotificationCenter = .default) {
+        guard let soundUrl = Bundle(for: SoundModeManager.self).url(forResource: "silent", withExtension: "aiff") else {
+            fatalError("\(#function) - \(SoundModeManager.self) couldn't find default silent sound `silent.aiff` in resources")
+        }
+        
+        do {
+            try self.init(soundUrl: soundUrl, soundUpdatingInterval: soundUpdatingInterval, notificationCenter: notificationCenter)
+        } catch {
+            fatalError("\(#function) - \(SoundModeManager.self) couldn't create a new instance with default sound URL. Error: \(error)")
+        }
+    }
+    
     deinit {
         // Remove the custom system sound and completion.
         AudioServicesRemoveSystemSoundCompletion(soundId)
@@ -154,7 +171,7 @@ public class SoundModeManager: NSObject {
     
     // MARK: - Methods
     
-    /// Update current state once and notify all observers.
+    /// Update current mode once and notify all observers.
     public func updateCurrentMode(completion: ChangeHandler? = nil) {
         playSound(completion: completion)
     }
@@ -168,13 +185,13 @@ public class SoundModeManager: NSObject {
         return token
     }
     
-    /// Begin updating current state, `updateCurrentMode()` method will be called after every `soundCheckInterval` expiration.
+    /// Begin updating current mode, `updateCurrentMode()` method will be called after every `soundCheckInterval` expiration.
     public func beginUpdatingCurrentMode() {
         startObservationTimer()
         isObserved = true
     }
     
-    /// Finish updating current state
+    /// Finish updating current mode.
     public func endUpdatingCurrentMode() {
         invalidateObservationTimer()
         guard isObserved else { return }
@@ -219,20 +236,22 @@ private extension SoundModeManager {
             self.isPlaying = false
             self.lastPlaySoundTimeInterval = nil
             
-            // Calculate new state.
-            let elapsed = (Date.timeIntervalSinceReferenceDate - lastPlaySoundTimeInterval) < 0.1
-            let newState: SoundMode = elapsed ? .silent : .ring
+            // Calculate new mode.
+            let elapsed = (Date.timeIntervalSinceReferenceDate - lastPlaySoundTimeInterval) < self.soundDuration
+            let newMode: SoundMode = elapsed ? .silent : .ring
             
-            // Update state and notify delegate if needed.
-            if newState != self.currentMode {
-                self.currentMode = newState
+            // Update mode and notify observers if needed.
+            if newMode != self.currentMode {
+                self.currentMode = newMode
                 DispatchQueue.main.async {
                     // Notify all observers.
-                    self.observationTokens.allObjects.forEach { $0.block?(newState) }
-                    
-                    // Notify current caller if exist.
-                    completion?(newState)
+                    self.observationTokens.allObjects.forEach { $0.block?(newMode) }
                 }
+            }
+            
+            // Notify current caller if exist.
+            DispatchQueue.main.async {
+                completion?(newMode)
             }
         }
     }
