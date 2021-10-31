@@ -1,0 +1,123 @@
+reporter: "xcode"
+
+# You can read more about rules
+# https://realm.github.io/SwiftLint/rule-directory.html
+
+warning_threshold: 15
+
+# Disabled rules from runnig
+disabled_rules: 
+  - identifier_name
+  - trailing_whitespace
+  - cyclomatic_complexity
+  - valid_ibinspectable
+
+# Opt in rules for runnig
+opt_in_rules: 
+  - closure_end_indentation
+  - collection_alignment
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - explicit_init
+  - fatal_error_message
+  - file_name
+  - file_name_no_space
+  - first_where
+  - implicit_return
+  - joined_default_parameter
+  - last_where
+  - literal_expression_end_indentation
+  - multiline_literal_brackets
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prefer_zero_over_explicit_init
+  - redundant_type_annotation
+  - sorted_first_last
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - untyped_error_in_catch
+  - yoda_condition
+
+# Paths to ignore during linting. Takes precedence over `included`.
+excluded:
+  - Pods
+  - Jodle/Resources/R.generated.swift
+  - Chat
+  - DerivedData
+
+# Configured length rules
+line_length:
+  warning: 170
+  ignores_comments: true
+
+type_body_length:
+  warning: 300
+  error: 400
+
+function_body_length:
+  warning: 60
+  error: 100
+
+file_length:
+  warning: 500
+  error: 800
+  ignore_comment_only_lines: true
+
+type_name:
+  min_length: 3
+  max_length:
+    warning: 50
+    error: 60
+
+# Configured rules
+colon:
+  apply_to_dictionaries: false
+  
+nesting:
+  type_level: 2
+
+empty_count:
+  severity: warning
+  only_after_dot: true
+
+# Configure custom_rules
+custom_rules:
+  final_class:
+    severity: warning
+    name: "Every class must have \"final\" modifier"
+    message: "Add \"final\" modifier otherwise add the prefix \"Base\" to the class name or mark it as \"internal\" if this class will be overridden."
+    regex: "^(class) (?!Base)"
+    included: ".*.swift"
+
+  mark_style:
+    severity: warning
+    name: "Use \"// MARK: - <Name>\" instead \"// MARK: <Name>\""
+    regex: "MARK: [^-]{1}"
+    match_kinds:
+      - comment
+    included: ".*.swift"
+
+  mark_newlines:
+    severity: warning
+    message: "Every \"MARK: -\" should be surrounded with newline before and after"
+    regex: "(([a-zA-Z0-9_}{)]+[ \t]*\n{1}[ \t]*)([\/]{2} MARK: - [a-zA-Z0-9 ]*))|(([\/]{2} MARK: - [a-zA-Z0-9 ]*)([\n]{1}[ \t]*[a-zA-z0-9_]+))"
+    included: ".*.swift"
+
+  mark_extensions:
+    severity: warning
+    message: "Every extension group should have \"MARK: - <Name>\" with name of this extension below"
+    regex: "([}]+[\t]*\n{1}[ \t]*)(?![\/]{2} MARK: - [a-zA-Z0-9 ]*)([\n]+[ \t]*)(extension [a-zA-Z0-9_]+:)"
+    included: ".*.swift"
+
+  empty_closure_params:
+    included: ".*.swift"
+    name: "Empty closure should be avoided"
+    regex: "[{]([\n\t ]*_ in[\n\t ]*)[}]"
+    message: "Use optional closures instead"
+    severity: warning
