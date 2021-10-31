@@ -11,7 +11,7 @@ jobs:
   create_tag:
     name: Create git tag based on project version
     if: ${{ github.event.pull_request.merged }}
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     timeout-minutes: 30
     steps:
 
@@ -28,4 +28,7 @@ jobs:
 
     - name: Prepare project to deploy
       run: |
+        echo ${ BRANCH }
         bundle exec fastlane prepare_to_deploy
+      env:
+        BRANCH: ${{ github.event.pull_request.base.ref }}
