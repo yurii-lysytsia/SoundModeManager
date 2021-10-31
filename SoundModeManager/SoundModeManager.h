@@ -1,9 +1,4 @@
-//
-//  SoundModeManager.h
-//  SoundModeManager
-//
-//  Created by Lysytsia Yurii on 31.10.2021.
-//
+// Copyright © 2021 Yurii Lysytsia. All rights reserved.
 
 #import <Foundation/Foundation.h>
 
@@ -12,7 +7,3 @@ FOUNDATION_EXPORT double SoundModeManagerVersionNumber;
 
 //! Project version string for SoundModeManager.
 FOUNDATION_EXPORT const unsigned char SoundModeManagerVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <SoundModeManager/PublicHeader.h>
-
-

@@ -8,7 +8,7 @@ on:
 jobs:
   deploy_pod:
     name: Deploy to Cocoa Pods
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     timeout-minutes: 30
     steps:
 
