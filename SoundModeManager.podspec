@@ -25,5 +25,6 @@ Pod::Spec.new do |spec|
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source_files  = "SoundModeManager/Source/**/*.swift"
+  spec.resources = "SoundModeManager/Resource/Sounds/*"
 
 end
