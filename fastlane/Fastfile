@@ -47,8 +47,16 @@ lane :update_version do
 	push_to_git_remote()
 end
 
+desc "Build project and run unit tests"
+lane :build_and_test do
+  run_tests(
+    project: PROJECT_FILE,
+    scheme: PROJECT_NAME
+  )
+end
+
 desc "Get Xcode project version, add git tag and push changes to trunk"
-lane :push_pod do
+lane :prepare_to_deploy do
 	# Get current project version number
   	version_number = get_version_number(
     	xcodeproj: PROJECT_FILE,
