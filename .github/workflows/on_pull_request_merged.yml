@@ -1,0 +1,31 @@
+name: Pull request has already merged
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+      
+jobs:
+  create_tag:
+    name: Create git tag based on project version
+    if: ${{ github.event.pull_request.merged }}
+    runs-on: macOS-latest
+    timeout-minutes: 30
+    steps:
+
+    - name: Checkout pull request branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.base.ref }}
+
+    - name: Setup ruby and bundler
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+        bundler-cache: true
+
+    - name: Prepare project to deploy
+      run: |
+        bundle exec fastlane prepare_to_deploy

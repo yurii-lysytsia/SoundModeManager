@@ -1,0 +1,24 @@
+name: Prepare project and deploy to services
+
+on:
+  release:
+    types:
+      - published
+      
+jobs:
+  deploy_pod:
+    name: Deploy to Cocoa Pods
+    runs-on: macOS-latest
+    timeout-minutes: 30
+    steps:
+
+    - name: Checkout pull request branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.release.tag_name }}
+
+    - name: Publish pod to trunk
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_PASSWORD }}
+      run: |
+        pod trunk push
