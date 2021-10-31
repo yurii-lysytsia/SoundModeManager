@@ -29,4 +29,3 @@ jobs:
     - name: Prepare project to deploy
       run: |
         bundle exec fastlane prepare_to_deploy
-      env:
