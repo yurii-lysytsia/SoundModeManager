@@ -1,0 +1,65 @@
+default_platform(:ios)
+
+PROJECT_NAME = "SoundModeManager"
+PROJECT_FILE = "#{PROJECT_NAME}.xcodeproj"
+POSPEC_FILE = "#{PROJECT_NAME}.podspec"
+
+desc "Update project version and push all changes after"
+lane :update_version do
+  # Get base branch name
+  branch = options[:git_branch]
+
+  UI.message "Current base branch name is `#{branch}`"
+
+  if !branch.start_with?('rc/')
+    UI.user_error! "Branch version is invalid. Base branch name must have prefix `rc/**`"
+  end
+
+  # Get branch version
+  branch_version = git_branch.split("/").last().strip()
+
+  if branch_version.empty?
+    UI.user_error! "Branch version is invalid. Please check your branch name. It must have `rc/<major>.<minor>.<patch>` format"
+  end
+
+  UI.message "Current branch version is `#{branch_version}`"
+
+	# Upgrade Xcode project version number with given branch version.
+  increment_version_number(
+    version_number: branch_version,
+   	xcodeproj: PROJECT_FILE
+  )
+
+  # Upgrade podspec version number with given branch version.
+	version_bump_podspec(
+	  path: POSPEC_FILE,
+		version_number: branch_version
+	)
+
+	# Commit all changes.
+	git_commit(
+		path: ["*.podspec", "*.xcodeproj/project.pbxproj", "*/Info.plist"],
+		message: "Updated project version to `#{branch_version}`",
+		allow_nothing_to_commit: true
+	)
+
+	# Push the commit to the origin.
+	push_to_git_remote()
+end
+
+desc "Get Xcode project version, add git tag and push changes to trunk"
+lane :push_pod do
+	# Get current project version number
+  	version_number = get_version_number(
+    	xcodeproj: PROJECT_FILE,
+    	target: PROJECT_NAME
+  	)
+
+  	# Add git tag if not exist and push to remote
+  	if git_tag_exists(tag: version_number, remote: true)
+  		UI.error "Tag `#{version_number}` was already exist"
+  	else
+  		add_git_tag(tag: version_number)
+  		push_git_tags(tag: version_number.shellescape)
+  	end
+end
