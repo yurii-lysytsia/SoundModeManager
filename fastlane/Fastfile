@@ -9,7 +9,7 @@ lane :update_version do |options|
   # Get base branch name
   branch = options[:git_branch]
 
-  if branch.empty?
+  if branch.nil?
     branch = git_branch()
     UI.UI.important "Default branch name is `#{branch}`"
   else

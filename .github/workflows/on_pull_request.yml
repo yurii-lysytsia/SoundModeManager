@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - '.github/**'
+      - 'SoundModeManager/**'
+      - 'SoundModeManagerTests/**'
 
 jobs:
   update_version:
