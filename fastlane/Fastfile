@@ -43,7 +43,7 @@ lane :update_version do |options|
 
 	# Commit all changes.
 	git_commit(
-		path: ["*.podspec", "*.xcodeproj/project.pbxproj", "**/Info.plist"],
+		path: ["*.podspec", "*.xcodeproj/project.pbxproj", "Info.plist"],
 		message: "Updated project version to `#{branch_version}`",
 		allow_nothing_to_commit: true
 	)
@@ -62,17 +62,20 @@ end
 
 desc "Get Xcode project version, add git tag and push changes to trunk"
 lane :prepare_to_deploy do
-	# Get current project version number
-  	version_number = get_version_number(
-    	xcodeproj: PROJECT_FILE,
-    	target: PROJECT_NAME
-  	)
+  # Prepare
+  UI.message "Prepare to deploy to git branch `#{git_branch}`"
 
-  	# Add git tag if not exist and push to remote
-  	if git_tag_exists(tag: version_number, remote: true)
-  		UI.error "Tag `#{version_number}` was already exist"
-  	else
-  		add_git_tag(tag: version_number)
-  		push_git_tags(tag: version_number.shellescape)
-  	end
+	# Get current project version number
+  version_number = get_version_number(
+  	xcodeproj: PROJECT_FILE,
+  	target: PROJECT_NAME
+  )
+
+  # Add git tag if not exist and push to remote
+  if git_tag_exists(tag: version_number, remote: true)
+  	UI.error "Tag `#{version_number}` was already exist"
+  else
+  	add_git_tag(tag: version_number)
+  	push_git_tags(tag: version_number.shellescape)
+  end
 end
