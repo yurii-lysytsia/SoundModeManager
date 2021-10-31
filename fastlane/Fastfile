@@ -43,7 +43,7 @@ lane :update_version do |options|
 
 	# Commit all changes.
 	git_commit(
-		path: ["*.podspec", "*.xcodeproj/project.pbxproj", "*/Info.plist"],
+		path: ["./*.podspec", "./*.xcodeproj/project.pbxproj", "./Info.plist"],
 		message: "Updated project version to `#{branch_version}`",
 		allow_nothing_to_commit: true
 	)
