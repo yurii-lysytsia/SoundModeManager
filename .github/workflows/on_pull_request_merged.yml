@@ -1,6 +1,8 @@
 name: Pull request has already merged
 
 on:
+  push:
+    - tmp
   pull_request:
     branches:
       - main
@@ -10,8 +12,8 @@ on:
 jobs:
   create_tag:
     name: Create git tag based on project version
-    if: ${{ github.event.pull_request.merged }}
-    runs-on: ubuntu-latest
+    # if: ${{ github.event.pull_request.merged }}
+    runs-on: macOS-latest
     timeout-minutes: 30
     steps:
 
