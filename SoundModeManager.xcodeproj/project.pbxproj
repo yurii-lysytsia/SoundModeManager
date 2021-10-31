@@ -186,7 +186,7 @@
 		5BD709E6272E8A0A006244C6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				5BD709E4272E8A01006244C6 /* silent.aiff */,
+				5BD70A32272EFAD2006244C6 /* Sounds */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -233,6 +233,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BD70A32272EFAD2006244C6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5BD709E4272E8A01006244C6 /* silent.aiff */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

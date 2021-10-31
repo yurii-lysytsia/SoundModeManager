@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "SoundModeManager"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "Detect silent / ring mode on the iOS device"
   spec.description  = "This is framework to detect silent / ring mode on the iOS device written on Swift"
   spec.homepage     = "https://github.com/yurii-lysytsia/SoundModeManager"
@@ -25,5 +25,6 @@ Pod::Spec.new do |spec|
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source_files  = "SoundModeManager/Source/**/*.swift"
+  spec.resources = "SoundModeManager/Resource/Sounds/*"
 
 end
