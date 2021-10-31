@@ -11,7 +11,7 @@ lane :update_version do |options|
 
   if branch.nil?
     branch = git_branch()
-    UI.UI.important "Default branch name is `#{branch}`"
+    UI.important "Default branch name is `#{branch}`"
   else
     UI.message "Custom branch name is `#{branch}`"
   end
