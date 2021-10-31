@@ -5,18 +5,23 @@ PROJECT_FILE = "#{PROJECT_NAME}.xcodeproj"
 POSPEC_FILE = "#{PROJECT_NAME}.podspec"
 
 desc "Update project version and push all changes after"
-lane :update_version do
+lane :update_version do |options|
   # Get base branch name
   branch = options[:git_branch]
 
-  UI.message "Current base branch name is `#{branch}`"
+  if branch.empty?
+    branch = git_branch()
+    UI.UI.important "Default branch name is `#{branch}`"
+  else
+    UI.message "Custom branch name is `#{branch}`"
+  end
 
   if !branch.start_with?('rc/')
     UI.user_error! "Branch version is invalid. Base branch name must have prefix `rc/**`"
   end
 
   # Get branch version
-  branch_version = git_branch.split("/").last().strip()
+  branch_version = branch.split("/").last().strip()
 
   if branch_version.empty?
     UI.user_error! "Branch version is invalid. Please check your branch name. It must have `rc/<major>.<minor>.<patch>` format"
