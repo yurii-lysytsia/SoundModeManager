@@ -20,8 +20,9 @@ For usage and installation instructions, visit their website. To integrate AirKi
 pod 'SoundModeManager'
 ```
 
-## 💻 Usage 
-
+## 💻 Usage
+Sound mode manager doesn't work on simulators!
+ 
 ### Create a new instance of manager:
 ```swift
 import SoundModeManager

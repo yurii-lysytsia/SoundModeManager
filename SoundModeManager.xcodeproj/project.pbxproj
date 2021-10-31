@@ -13,6 +13,13 @@
 		5BD709DD272E870C006244C6 /* SoundModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD709DC272E870C006244C6 /* SoundModeManager.swift */; };
 		5BD709DF272E8774006244C6 /* SoundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD709DE272E8774006244C6 /* SoundMode.swift */; };
 		5BD709E5272E8A01006244C6 /* silent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5BD709E4272E8A01006244C6 /* silent.aiff */; };
+		5BD70A10272EA7C2006244C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD70A0F272EA7C2006244C6 /* AppDelegate.swift */; };
+		5BD70A14272EA7C2006244C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD70A13272EA7C2006244C6 /* ViewController.swift */; };
+		5BD70A19272EA7C3006244C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD70A18272EA7C3006244C6 /* Assets.xcassets */; };
+		5BD70A22272EA85A006244C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD70A21272EA85A006244C6 /* Main.storyboard */; };
+		5BD70A25272EA880006244C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD70A24272EA880006244C6 /* LaunchScreen.storyboard */; };
+		5BD70A2A272EAF7F006244C6 /* SoundModeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD709BD272E8316006244C6 /* SoundModeManager.framework */; platformFilter = ios; };
+		5BD70A2B272EAF7F006244C6 /* SoundModeManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD709BD272E8316006244C6 /* SoundModeManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +30,28 @@
 			remoteGlobalIDString = 5BD709BC272E8316006244C6;
 			remoteInfo = SoundModeManager;
 		};
+		5BD70A2C272EAF7F006244C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BD709B4272E8316006244C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BD709BC272E8316006244C6;
+			remoteInfo = SoundModeManager;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5BD70A2E272EAF7F006244C6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BD70A2B272EAF7F006244C6 /* SoundModeManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5BD709BD272E8316006244C6 /* SoundModeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SoundModeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +63,13 @@
 		5BD709DE272E8774006244C6 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
 		5BD709E4272E8A01006244C6 /* silent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = silent.aiff; sourceTree = "<group>"; };
 		5BD709E7272EA38B006244C6 /* SoundModeManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SoundModeManager.podspec; sourceTree = "<group>"; };
+		5BD70A0D272EA7C2006244C6 /* SoundModeManagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundModeManagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD70A0F272EA7C2006244C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BD70A13272EA7C2006244C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BD70A18272EA7C3006244C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BD70A1D272EA7C3006244C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BD70A21272EA85A006244C6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5BD70A24272EA880006244C6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +88,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BD70A0A272EA7C2006244C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD70A2A272EAF7F006244C6 /* SoundModeManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,7 +106,9 @@
 				5BD709E7272EA38B006244C6 /* SoundModeManager.podspec */,
 				5BD709BF272E8316006244C6 /* SoundModeManager */,
 				5BD709C9272E8316006244C6 /* SoundModeManagerTests */,
+				5BD70A0E272EA7C2006244C6 /* SoundModeManagerExample */,
 				5BD709BE272E8316006244C6 /* Products */,
+				5BD70A29272EAF7F006244C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +117,7 @@
 			children = (
 				5BD709BD272E8316006244C6 /* SoundModeManager.framework */,
 				5BD709C5272E8316006244C6 /* SoundModeManagerTests.xctest */,
+				5BD70A0D272EA7C2006244C6 /* SoundModeManagerExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +189,50 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		5BD70A0E272EA7C2006244C6 /* SoundModeManagerExample */ = {
+			isa = PBXGroup;
+			children = (
+				5BD70A0F272EA7C2006244C6 /* AppDelegate.swift */,
+				5BD70A23272EA877006244C6 /* Modules */,
+				5BD70A18272EA7C3006244C6 /* Assets.xcassets */,
+				5BD70A1D272EA7C3006244C6 /* Info.plist */,
+			);
+			path = SoundModeManagerExample;
+			sourceTree = "<group>";
+		};
+		5BD70A23272EA877006244C6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5BD70A26272EA884006244C6 /* LaunchScreen */,
+				5BD70A27272EA965006244C6 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5BD70A26272EA884006244C6 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5BD70A24272EA880006244C6 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		5BD70A27272EA965006244C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5BD70A21272EA85A006244C6 /* Main.storyboard */,
+				5BD70A13272EA7C2006244C6 /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5BD70A29272EAF7F006244C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -194,6 +284,26 @@
 			productReference = 5BD709C5272E8316006244C6 /* SoundModeManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BD70A0C272EA7C2006244C6 /* SoundModeManagerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BD70A1E272EA7C3006244C6 /* Build configuration list for PBXNativeTarget "SoundModeManagerExample" */;
+			buildPhases = (
+				5BD70A09272EA7C2006244C6 /* Sources */,
+				5BD70A28272EAA19006244C6 /* [SwiftLint] Run */,
+				5BD70A0A272EA7C2006244C6 /* Frameworks */,
+				5BD70A0B272EA7C2006244C6 /* Resources */,
+				5BD70A2E272EAF7F006244C6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BD70A2D272EAF7F006244C6 /* PBXTargetDependency */,
+			);
+			name = SoundModeManagerExample;
+			productName = SoundModeManagerExample;
+			productReference = 5BD70A0D272EA7C2006244C6 /* SoundModeManagerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,6 +320,9 @@
 						LastSwiftMigration = 1310;
 					};
 					5BD709C4272E8316006244C6 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					5BD70A0C272EA7C2006244C6 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
@@ -229,6 +342,7 @@
 			targets = (
 				5BD709BC272E8316006244C6 /* SoundModeManager */,
 				5BD709C4272E8316006244C6 /* SoundModeManagerTests */,
+				5BD70A0C272EA7C2006244C6 /* SoundModeManagerExample */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +360,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BD70A0B272EA7C2006244C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD70A25272EA880006244C6 /* LaunchScreen.storyboard in Resources */,
+				5BD70A22272EA85A006244C6 /* Main.storyboard in Resources */,
+				5BD70A19272EA7C3006244C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +394,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/.swiftlint\" --config \"${SRCROOT}/.swiftlint.yml\" --path \"${SRCROOT}/SoundModeManager\"\n";
 		};
+		5BD70A28272EAA19006244C6 /* [SwiftLint] Run */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint] Run";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/.swiftlint\" --config \"${SRCROOT}/.swiftlint.yml\" --path \"${SRCROOT}/SoundModeManagerExample\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -290,6 +432,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BD70A09272EA7C2006244C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD70A14272EA7C2006244C6 /* ViewController.swift in Sources */,
+				5BD70A10272EA7C2006244C6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,6 +448,12 @@
 			isa = PBXTargetDependency;
 			target = 5BD709BC272E8316006244C6 /* SoundModeManager */;
 			targetProxy = 5BD709C7272E8316006244C6 /* PBXContainerItemProxy */;
+		};
+		5BD70A2D272EAF7F006244C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 5BD709BC272E8316006244C6 /* SoundModeManager */;
+			targetProxy = 5BD70A2C272EAF7F006244C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -530,6 +687,66 @@
 			};
 			name = Release;
 		};
+		5BD70A1F272EA7C3006244C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SoundModeManagerExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.lysytsia.soundmodemanager.example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BD70A20272EA7C3006244C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SoundModeManagerExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.lysytsia.soundmodemanager.example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -556,6 +773,15 @@
 			buildConfigurations = (
 				5BD709D3272E8316006244C6 /* Debug */,
 				5BD709D4272E8316006244C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BD70A1E272EA7C3006244C6 /* Build configuration list for PBXNativeTarget "SoundModeManagerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BD70A1F272EA7C3006244C6 /* Debug */,
+				5BD70A20272EA7C3006244C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
